@@ -157,6 +157,8 @@ private:
 
 PThread::PThread()
 {
+	if(m_pool == NULL)
+		init();
 	pj_status_t rt = pj_thread_create(m_pool,"PThread",threadstart,this,1024*1024,0,&m_threadid);
 	if(rt != PJ_SUCCESS)
 	{
