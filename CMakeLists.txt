@@ -1,7 +1,7 @@
 cmake_minimum_required (VERSION 2.6)
 project (guanli_server)
 add_definitions(-O2)
-include_directories(../pjproject-2.3/pjlib/include)
+include_directories(pjproject-2.3/pjlib/include)
 include_directories(opus-1.1/include)
 
 add_subdirectory (msgpack-c  lib)
