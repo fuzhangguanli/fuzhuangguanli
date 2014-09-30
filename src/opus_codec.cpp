@@ -104,6 +104,7 @@ void opuscodec::decode(const pj_uint8_t *buf, int buflen, pj_int16_t *out, int &
 		outlen = ret;
 	else
 	{
+		outlen = 0;
 		PJ_LOG(3,(THIS_FILE,"opus_decode error"));
 	}
 }

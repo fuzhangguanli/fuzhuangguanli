@@ -183,9 +183,12 @@ void PThread::waitexit()
 
 PMutex::PMutex():m_mutexid(NULL)
 {
-	PJ_LOG(5,("JOBLIB","pool == %p",m_pool));
 	if(m_pool == NULL)
+	{
+		pj_init();
 		init();
+	}
+	PJ_LOG(5,("JOBLIB","pool == %p",m_pool));
 	pj_mutex_create_simple(m_pool,"PMutex",&m_mutexid);
 }
 PMutex::~PMutex()
